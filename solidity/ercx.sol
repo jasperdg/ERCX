@@ -39,7 +39,7 @@ contract ERCX is ERC721BasicToken{
     }
     
     function getUserAssetBalance(address _tokenAddr) view public returns (uint amount, uint supply, string name, string symbol){
-        uint _balance = ERC20(_tokenAddr).balanceOf(msg.sender) / (10 ** 18); // Get users balance of certain token
+        uint _balance = ERC20(_tokenAddr).balanceOf(msg.sender); // Get users balance of certain token
         return (_balance, assets[_tokenAddr].supply, assets[_tokenAddr].name, assets[_tokenAddr].symbol);
     }
     
